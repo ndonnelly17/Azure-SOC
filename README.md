@@ -38,16 +38,16 @@ Windows RDP/SMB Auth Failures![image](https://github.com/ndonnelly17/Azure-SOC/a
 ## Metrics Before Hardening / Security Controls
 
 The following table shows the metrics we measured in our insecure environment for 24 hours:
-Start Time 2023-03-15 17:04:29
-Stop Time 2023-03-16 17:04:29
+Start Time 2023-11-30 01:32:37
+Stop Time 2023-12-08 01:32:37
 
 | Metric                   | Count
 | ------------------------ | -----
-| SecurityEvent            | 19470
-| Syslog                   | 3028
-| SecurityAlert            | 10
-| SecurityIncident         | 348
-| AzureNetworkAnalytics_CL | 843
+| SecurityEvent            | 25280
+| Syslog                   | 609
+| SecurityAlert            | 5
+| SecurityIncident         | 123
+| AzureNetworkAnalytics_CL | 2116
 
 ## Attack Maps Before Hardening / Security Controls
 
@@ -56,15 +56,15 @@ Stop Time 2023-03-16 17:04:29
 ## Metrics After Hardening / Security Controls
 
 The following table shows the metrics we measured in our environment for another 24 hours, but after we have applied security controls:
-Start Time 2023-03-18 15:37
-Stop Time	2023-03-19 15:37
+Start Time 2023-12-09 01:03
+Stop Time	2023-12-10 01:03
 
 | Metric                   | Count
 | ------------------------ | -----
-| SecurityEvent            | 8778
-| Syslog                   | 25
-| SecurityAlert            | 0
-| SecurityIncident         | 0
+| SecurityEvent            | 110
+| Syslog                   | 344
+| SecurityAlert            | 1
+| SecurityIncident         | 2
 | AzureNetworkAnalytics_CL | 0
 
 ## Conclusion
