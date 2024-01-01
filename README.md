@@ -4,13 +4,17 @@ Cloud Honeynet / SOC![image](https://github.com/ndonnelly17/Azure-SOC/assets/652
 
 ## Introduction
 
-In this project, I build a mini honeynet in Azure and ingest log sources from various resources into a Log Analytics workspace, which is then used by Microsoft Sentinel to build attack maps, trigger alerts, and create incidents. I measured some security metrics in the insecure environment for 24 hours, apply some security controls to harden the environment, measure metrics for another 24 hours, then show the results below. The metrics we will show are:
+In this cybersecurity project I set up a SOC and a honeynet to capture live traffic.  Log sources from different resources were ingested into a Log Analytics workspace which is used by Microsoft Sentinel to make attack maps, trigger alerts, and create incidents.  The way this was accomplished was by having the NSGs open to be able to measure activity in this insecure setup before applying any security measures.  Then, some security measures were applied, and more measurements were taken to see the difference in outcomes.  Below, you will be able to see the environment before any security measures were applied and then after security measures were applied measured by the metrics below:
 
-- SecurityEvent (Windows Event Logs)
-- Syslog (Linux Event Logs)
-- SecurityAlert (Log Analytics Alerts Triggered)
-- SecurityIncident (Incidents created by Sentinel)
-- AzureNetworkAnalytics_CL (Malicious Flows allowed into our honeynet)
+•	SecurityEvent (Windows Event Logs)
+  
+•	Syslog (Linux Event Logs)
+
+•	SecurityAlert (Log Analytics Alerts Triggered)
+
+•	SecurityIncident (Incidents created by Sentinel)
+
+•	AzureNetworkAnalytics_CL (Malicious Flows allowed into honeynet)
 
 ## Architecture Before Hardening / Security Controls
 ![Architecture Diagram](https://i.imgur.com/aBDwnKb.jpg)
