@@ -49,7 +49,7 @@ Stop Time 2023-12-01 01:32:37
 | SecurityIncident                    | 123
 | NSG Inbound Malicious Flows Allowed | 2116
 
-## Attack Maps Before Hardening / Security Controls
+## Attack Maps After Hardening / Security Controls
 
 ```All map queries actually returned no results due to no instances of malicious activity for the 24 hour period after hardening.```
 
