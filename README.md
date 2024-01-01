@@ -39,15 +39,15 @@ Windows RDP/SMB Auth Failures![image](https://github.com/ndonnelly17/Azure-SOC/a
 
 The following table shows the metrics we measured in our insecure environment for 24 hours:
 Start Time 2023-11-30 01:32:37
-Stop Time 2023-12-08 01:32:37
+Stop Time 2023-12-01 01:32:37
 
-| Metric                   | Count
-| ------------------------ | -----
-| SecurityEvent            | 25280
-| Syslog                   | 609
-| SecurityAlert            | 5
-| SecurityIncident         | 123
-| AzureNetworkAnalytics_CL | 2116
+| Metric                              | Count
+| ------------------------            | -----
+| SecurityEvent                       | 25280
+| Syslog                              | 609
+| SecurityAlert                       | 5
+| SecurityIncident                    | 123
+| NSG Inbound Malicious Flows Allowed | 2116
 
 ## Attack Maps Before Hardening / Security Controls
 
@@ -56,19 +56,27 @@ Stop Time 2023-12-08 01:32:37
 ## Metrics After Hardening / Security Controls
 
 The following table shows the metrics we measured in our environment for another 24 hours, but after we have applied security controls:
-Start Time 2023-12-09 01:03
-Stop Time	2023-12-10 01:03
+Start Time 2023-12-02 01:03
+Stop Time	2023-12-03 01:03
 
-| Metric                   | Count
-| ------------------------ | -----
-| SecurityEvent            | 110
-| Syslog                   | 344
-| SecurityAlert            | 1
-| SecurityIncident         | 2
-| AzureNetworkAnalytics_CL | 0
+| Metric                              | Count
+| ------------------------            | -----
+| SecurityEvent                       | 110
+| Syslog                              | 344
+| SecurityAlert                       | 1
+| SecurityIncident                    | 2
+| NSG Inbound Malicious Flows Allowed | 0
 
 ## Conclusion
 
-In this project, a mini honeynet was constructed in Microsoft Azure and log sources were integrated into a Log Analytics workspace. Microsoft Sentinel was employed to trigger alerts and create incidents based on the ingested logs. Additionally, metrics were measured in the insecure environment before security controls were applied, and then again after implementing security measures. It is noteworthy that the number of security events and incidents were drastically reduced after the security controls were applied, demonstrating their effectiveness.
+This project used Microsoft Azure to create a honeynet in which log sources were integrated into a Log Analytics workspace.  Microsoft Sentinel was taken advantage of to have alerts activated and have incidents made that were based on the ingested logs.  The insecure environment had metrics taken before security controls were implemented, and then metrics were taken again after the environment was secured.  Please see the table below to see noticeable difference in the reduction security events and incidents after security controls were applied. 
 
-It is worth noting that if the resources within the network were heavily utilized by regular users, it is likely that more security events and alerts may have been generated within the 24-hour period following the implementation of the security controls.
+| Results                                      | Change After Security Controls Implemented
+| ------------------------                     | -----
+| SecurityEvents (Windows VM)                  | 99.56%
+| Syslog (Linux VMs)                           | 43.51%
+| SecurityAlert (Microsoft Defender for Cloud) | 80.00%
+| SecurityIncident (Sentinel Incidents)        | 98.37%
+| NSG Inbound Malicious Flows Allowed          | 100%
+
+As an end-note it is worth mentioning that if this network had regular users, there would be most likely be more security events and alerts that would have been discovered in the 24-hour time frame following the implementation of the security controls.
